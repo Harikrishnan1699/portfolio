@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="container footer__inner">
+
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="brand__dot"></span>
+        Harikrishnan PV
+      </div>
+      <p class="footer__tag">
+        Building elegant, performant Angular interfaces — one component at a time.
+      </p>
+    </div>
+
+    <div class="footer__links">
+      <h4>Connect</h4>
+      <ul>
+        <li><a [href]="resume.contact.linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a [href]="'mailto:' + resume.contact.email">Email</a></li>
+        <li><a [href]="'tel:+917907718872'">Phone</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__links">
+      <h4>Sitemap</h4>
+      <ul>
+        <li><a href="#about" (click)="toTop($event)">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__top">
+      <button type="button" class="btn btn-ghost footer__top-btn" (click)="toTop($event)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"/>
+        </svg>
+        Back to top
+      </button>
+    </div>
+
+  </div>
+
+  <div class="footer__base container">
+    <span>© {{ year }} {{ resume.name }}. Crafted with Angular &amp; care.</span>
+    <span class="mono">v1.0</span>
+  </div>
+</footer>

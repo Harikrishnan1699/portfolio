@@ -1,0 +1,89 @@
+<section id="about" class="section about">
+  <div class="container">
+
+    <div class="about__head">
+      <span class="section-eyebrow reveal" appReveal>// 01 — about me</span>
+      <h2 class="section-title reveal" appReveal style="--i: 1">
+        A developer who treats <span class="gradient-text">UI as a craft</span>.
+      </h2>
+      <p class="section-subtitle reveal" appReveal style="--i: 2">
+        {{ resume.summary }}
+      </p>
+    </div>
+
+    <div class="about__grid">
+
+      <div class="about__story glass reveal reveal-left" appReveal>
+        <h3>What drives me</h3>
+        <p>
+          Over the last <strong>3.4+ years</strong> at Qdes Infotech, I've shipped large-scale
+          enterprise web apps in healthcare and fintech — from a full Hospital Management
+          Information System to compliance middleware for Saudi Arabia's ZATCA e-invoicing.
+        </p>
+        <p>
+          I care a lot about the small details: micro-interactions that feel right,
+          components that compose cleanly, and performance that holds up under real-world
+          enterprise load. I'm equally happy debugging a tricky RxJS stream or polishing a
+          glassy hover state.
+        </p>
+
+        <div class="about__tags">
+          <span class="tag">Angular</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">SCSS</span>
+          <span class="tag">RxJS</span>
+          <span class="tag">REST</span>
+          <span class="tag">WebSockets</span>
+          <span class="tag">Performance</span>
+          <span class="tag">UX</span>
+        </div>
+      </div>
+
+      <div class="about__cards">
+        @for (item of resume.technicalStrengths; track item.title; let i = $index) {
+          <div class="strength glass reveal reveal-right" appReveal [style.--i]="i + 1">
+            <div class="strength__icon" [attr.data-icon]="item.icon">
+              @switch (item.icon) {
+                @case ('cube') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+                  </svg>
+                }
+                @case ('plug') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 2v6M15 2v6M5 10h14v4a7 7 0 0 1-14 0v-4zM12 21v-3"/>
+                  </svg>
+                }
+                @case ('wand') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 4V2M15 16v-2M8 9h2M20 9h2M17.8 11.8L19 13M15 9h0M17.8 6.2L19 5M3 21l9-9M12.2 6.2L11 5"/>
+                  </svg>
+                }
+                @case ('spark') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                  </svg>
+                }
+                @case ('shield') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                }
+                @case ('layers') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                }
+              }
+            </div>
+            <h4 class="strength__title">{{ item.title }}</h4>
+            <p class="strength__body">{{ item.body }}</p>
+          </div>
+        }
+      </div>
+
+    </div>
+
+  </div>
+</section>

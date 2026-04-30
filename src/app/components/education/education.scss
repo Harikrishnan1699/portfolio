@@ -1,0 +1,63 @@
+:host { display: block; }
+
+.education__head {
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.education__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.edu {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 26px 28px;
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s, box-shadow 0.4s;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-strong);
+    box-shadow: 0 20px 50px -25px var(--accent-glow);
+  }
+
+  &__icon {
+    width: 64px; height: 64px;
+    display: grid; place-items: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(124, 92, 255, 0.30), rgba(34, 211, 238, 0.20));
+    color: #fff;
+    border: 1px solid var(--border-strong);
+  }
+
+  &__degree {
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+  }
+
+  &__inst {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+  }
+
+  &__dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--text-dim);
+  }
+}

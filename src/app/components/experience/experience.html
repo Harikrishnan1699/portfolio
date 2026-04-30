@@ -1,0 +1,50 @@
+<section id="experience" class="section experience">
+  <div class="container">
+
+    <div class="experience__head">
+      <span class="section-eyebrow reveal" appReveal>// 03 — career</span>
+      <h2 class="section-title reveal" appReveal style="--i: 1">
+        Where I've been <span class="gradient-text">building</span>.
+      </h2>
+      <p class="section-subtitle reveal" appReveal style="--i: 2">
+        A close look at the products, teams, and challenges that have shaped my craft.
+      </p>
+    </div>
+
+    <ol class="timeline">
+      @for (job of experience; track job.company; let i = $index) {
+        <li class="timeline__item reveal reveal-left" appReveal [style.--i]="i + 1">
+          <span class="timeline__node" [class.is-current]="job.current">
+            @if (job.current) { <span class="timeline__pulse"></span> }
+          </span>
+
+          <article class="timeline__card glass">
+            <header class="timeline__card-head">
+              <div>
+                <h3 class="timeline__role">{{ job.role }}</h3>
+                <a class="timeline__company gradient-text">{{ job.company }}</a>
+              </div>
+              <div class="timeline__meta">
+                <span class="timeline__period mono">{{ job.period }}</span>
+                <span class="timeline__location">{{ job.location }}</span>
+                @if (job.current) { <span class="timeline__badge">Current</span> }
+              </div>
+            </header>
+
+            <ul class="timeline__bullets">
+              @for (b of job.bullets; track b) {
+                <li>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{{ b }}</span>
+                </li>
+              }
+            </ul>
+          </article>
+        </li>
+      }
+    </ol>
+
+  </div>
+</section>

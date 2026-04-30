@@ -1,0 +1,79 @@
+:host { display: block; }
+
+.skills__head {
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.skill {
+  padding: 22px 24px;
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-strong);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  &__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+
+  &__cat {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+
+  &__bar {
+    position: relative;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+  }
+
+  &__fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: inherit;
+    background: var(--grad-cool);
+    box-shadow: 0 0 12px rgba(124, 92, 255, 0.6);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 1.2s var(--ease-out);
+    transition-delay: 0.2s;
+  }
+
+  &__meta {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-align: right;
+  }
+}
+
+/* Animate fill horizontally only when card scrolls into view */
+.skill.in-view .skill__fill { transform: scaleX(1); }
+.skill[style*="--i"].in-view .skill__fill {
+  transition-delay: calc(0.15s + var(--i) * 0.04s);
+}

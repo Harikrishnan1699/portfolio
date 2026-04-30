@@ -1,0 +1,124 @@
+<section id="hero" class="hero">
+
+  <!-- Animated aurora blobs in the background -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="blob blob--violet" appParallax [speed]="0.18"></div>
+    <div class="blob blob--cyan"   appParallax [speed]="-0.12"></div>
+    <div class="blob blob--pink"   appParallax [speed]="0.08"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="container hero__inner">
+
+    <div class="hero__content">
+      <span class="hero__badge reveal" appReveal>
+        <span class="hero__badge-dot"></span>
+        Available for new opportunities
+      </span>
+
+      <h1 class="hero__title reveal" appReveal style="--i: 1">
+        Hi, I'm <span class="gradient-text">{{ resume.name }}</span>.
+        <br />
+        I build delightful Angular apps.
+      </h1>
+
+      <p class="hero__lead reveal" appReveal style="--i: 2">
+        {{ resume.tagline }}
+      </p>
+
+      <div class="hero__meta reveal" appReveal style="--i: 3">
+        <span class="hero__chip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          {{ resume.location }}
+        </span>
+        <span class="hero__chip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          {{ resume.yearsOfExperience }}+ years experience
+        </span>
+        <span class="hero__chip">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          Software Engineer @ Qdes Infotech
+        </span>
+      </div>
+
+      <div class="hero__cta reveal" appReveal style="--i: 4">
+        <a href="#projects" class="btn btn-primary" (click)="go('projects', $event)">
+          View my work
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost" (click)="go('contact', $event)">
+          Get in touch
+        </a>
+      </div>
+
+      <div class="hero__stats reveal" appReveal style="--i: 5">
+        @for (h of resume.highlights; track h.label; let i = $index) {
+          <div class="stat" [style.--i]="i + 1">
+            <div class="stat__value gradient-text">{{ h.value }}</div>
+            <div class="stat__label">{{ h.label }}</div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Floating glass orb / code mockup -->
+    <div class="hero__visual reveal reveal-scale" appReveal>
+      <div class="orb glass glass-strong">
+        <div class="orb__head">
+          <span class="orb__dot orb__dot--r"></span>
+          <span class="orb__dot orb__dot--y"></span>
+          <span class="orb__dot orb__dot--g"></span>
+          <span class="orb__file mono">harikrishnan.ts</span>
+        </div>
+        <pre class="orb__code mono"><span class="kw">const</span> <span class="var">developer</span> = &#123;
+  <span class="prop">name</span>: <span class="str">'Harikrishnan PV'</span>,
+  <span class="prop">role</span>: <span class="str">'Software Engineer'</span>,
+  <span class="prop">stack</span>: [<span class="str">'Angular'</span>, <span class="str">'TypeScript'</span>, <span class="str">'RxJS'</span>],
+  <span class="prop">focus</span>: <span class="str">'crafting fast, accessible UIs'</span>,
+  <span class="prop">currentlyBuilding</span>: <span class="str">'enterprise HMIS'</span>,
+  <span class="prop">openTo</span>: <span class="str">'new challenges'</span>,
+&#125;;
+
+<span class="kw">export default</span> developer;</pre>
+      </div>
+
+      <div class="float-card float-card--top glass">
+        <div class="float-card__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <div>
+          <div class="float-card__title">Clean Code</div>
+          <div class="float-card__sub">Modular Angular</div>
+        </div>
+      </div>
+
+      <div class="float-card float-card--bottom glass">
+        <div class="float-card__icon float-card__icon--alt">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="float-card__title">Performant</div>
+          <div class="float-card__sub">Optimized for scale</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="#about" class="hero__scroll" (click)="go('about', $event)" aria-label="Scroll to about">
+    <span class="hero__scroll-label mono">scroll</span>
+    <span class="hero__scroll-line"></span>
+  </a>
+</section>

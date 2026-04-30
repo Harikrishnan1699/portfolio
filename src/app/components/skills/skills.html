@@ -1,0 +1,32 @@
+<section id="skills" class="section skills">
+  <div class="container">
+
+    <div class="skills__head">
+      <span class="section-eyebrow reveal" appReveal>// 02 — toolkit</span>
+      <h2 class="section-title reveal" appReveal style="--i: 1">
+        Languages, frameworks &amp; <span class="gradient-text">tools</span> I use daily.
+      </h2>
+      <p class="section-subtitle reveal" appReveal style="--i: 2">
+        A focused stack for building modern, performant front-end experiences.
+      </p>
+    </div>
+
+    <div class="skills__grid">
+      @for (skill of skills; track skill.name; let i = $index) {
+        <div class="skill glass reveal reveal-scale" appReveal [style.--i]="i + 1">
+          <div class="skill__top">
+            <span class="skill__name">{{ skill.name }}</span>
+            <span class="skill__cat mono">{{ skill.category }}</span>
+          </div>
+          <div class="skill__bar" [attr.aria-label]="skill.name + ' proficiency'">
+            <span class="skill__fill" [style.width.%]="skill.level"></span>
+          </div>
+          <div class="skill__meta">
+            <span class="mono">{{ skill.level }}%</span>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

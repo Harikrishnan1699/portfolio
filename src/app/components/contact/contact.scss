@@ -1,0 +1,104 @@
+:host { display: block; }
+
+.contact__card {
+  padding: clamp(40px, 6vw, 72px);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(124, 92, 255, 0.30), transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(34, 211, 238, 0.25), transparent 50%);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.contact__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact__intro .section-eyebrow { margin-bottom: 18px; }
+
+.contact__title {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.contact__lead {
+  color: var(--text-muted);
+  margin-bottom: 26px;
+  max-width: 460px;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.contact__row {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.3s var(--ease-spring), border-color 0.3s, background 0.3s;
+
+  &:hover {
+    transform: translateX(4px);
+    border-color: var(--border-strong);
+    background: var(--surface-strong);
+  }
+}
+
+.contact__icon {
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.30), rgba(34, 211, 238, 0.18));
+  color: #fff;
+  border: 1px solid var(--border-strong);
+}
+
+.contact__label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+.contact__value {
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: color 0.25s;
+
+  &:hover { color: var(--accent-2); }
+}
+
+@media (max-width: 880px) {
+  .contact__grid { grid-template-columns: 1fr; gap: 36px; }
+}

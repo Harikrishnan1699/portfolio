@@ -1,0 +1,45 @@
+<header class="nav" [class.is-scrolled]="scrolled()" [class.is-open]="mobileOpen()">
+  <div class="container nav__inner">
+
+    <a href="#hero" class="brand" (click)="go('hero', $event)">
+      <span class="brand__mark">
+        <span class="brand__dot"></span>
+        HP
+      </span>
+      <span class="brand__name">Harikrishnan<span class="gradient-text">.</span></span>
+    </a>
+
+    <nav class="nav__links" [attr.aria-hidden]="!mobileOpen() && null">
+      @for (link of links; track link.id) {
+        <a
+          href="#{{ link.id }}"
+          class="nav__link"
+          [class.is-active]="activeId() === link.id"
+          (click)="go(link.id, $event)"
+        >
+          <span class="nav__link-label">{{ link.label }}</span>
+        </a>
+      }
+    </nav>
+
+    <div class="nav__actions">
+      <a [href]="'mailto:' + resume.contact.email" class="btn btn-primary nav__cta">
+        Let's talk
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <button
+        type="button"
+        class="nav__burger"
+        [attr.aria-expanded]="mobileOpen()"
+        aria-label="Toggle navigation"
+        (click)="toggleMobile()"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>

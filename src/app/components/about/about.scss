@@ -1,0 +1,102 @@
+:host { display: block; }
+
+.about__head {
+  max-width: 760px;
+  margin-bottom: 64px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.about__story {
+  padding: 36px;
+  height: 100%;
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  p { color: var(--text-muted); margin-bottom: 16px; }
+  strong { color: var(--text); font-weight: 600; }
+}
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.tag {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  transition: color 0.25s, border-color 0.25s, transform 0.25s var(--ease-spring);
+
+  &:hover {
+    color: var(--accent-2);
+    border-color: rgba(34, 211, 238, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+.about__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.strength {
+  padding: 24px;
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s, box-shadow 0.4s;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    box-shadow: 0 20px 50px -25px var(--accent-glow);
+  }
+
+  &__icon {
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, rgba(124, 92, 255, 0.25), rgba(34, 211, 238, 0.18));
+    color: #fff;
+    border: 1px solid var(--border-strong);
+
+    svg { width: 22px; height: 22px; }
+  }
+
+  &__title {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  &__body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .about__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .about__cards { grid-template-columns: 1fr; }
+  .about__story { padding: 26px; }
+}
