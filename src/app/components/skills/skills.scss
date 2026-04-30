@@ -1,36 +1,37 @@
 :host { display: block; }
 
 .skills__head {
-  max-width: 720px;
-  margin-bottom: 56px;
+  max-width: 760px;
+  margin-bottom: 64px;
 }
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 18px;
 }
 
 .skill {
-  padding: 22px 24px;
-  transition: transform 0.4s var(--ease-spring), border-color 0.3s;
+  padding: 26px 28px;
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s, box-shadow 0.4s;
 
   &:hover {
-    transform: translateY(-3px);
-    border-color: var(--border-strong);
+    transform: translateY(-4px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
   }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   &__name {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--text);
   }
 
@@ -39,14 +40,16 @@
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--text-dim);
-    padding: 4px 10px;
+    padding: 5px 11px;
     border-radius: 999px;
+    background: var(--paper-strong);
     border: 1px solid var(--border);
+    font-weight: 500;
   }
 
   &__bar {
     position: relative;
-    height: 6px;
+    height: 7px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.06);
     overflow: hidden;
@@ -56,23 +59,34 @@
     position: absolute;
     inset: 0 auto 0 0;
     border-radius: inherit;
-    background: var(--grad-cool);
-    box-shadow: 0 0 12px rgba(124, 92, 255, 0.6);
+    background: var(--grad-cosmic);
+    background-size: 200% 200%;
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.55);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 1.2s var(--ease-out);
     transition-delay: 0.2s;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  /* Inner shimmer wave */
+  &__fill::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+    animation: shimmer 2.4s linear infinite;
   }
 
   &__meta {
     margin-top: 10px;
-    font-size: 0.78rem;
-    color: var(--text-dim);
+    font-size: 0.82rem;
+    color: var(--cyan);
     text-align: right;
+    font-weight: 600;
   }
 }
 
-/* Animate fill horizontally only when card scrolls into view */
 .skill.in-view .skill__fill { transform: scaleX(1); }
 .skill[style*="--i"].in-view .skill__fill {
   transition-delay: calc(0.15s + var(--i) * 0.04s);

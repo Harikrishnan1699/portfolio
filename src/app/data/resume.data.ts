@@ -8,7 +8,8 @@ export const RESUME = {
   role: 'Software Engineer',
   tagline: 'Angular Developer crafting fast, accessible, beautifully-engineered web experiences.',
   location: 'Kakkanad, Ernakulam, India',
-  yearsOfExperience: 3.4,
+  yearsOfExperience: 4.8,
+  photoUrl: 'profile.jpg',
 
   contact: {
     email: 'hariinfo1699@gmail.com',
@@ -18,14 +19,15 @@ export const RESUME = {
   },
 
   summary:
-    'Qualified Angular developer with 3.4+ years of experience in front-end development and design. ' +
+    'Qualified Angular developer with 4.8+ years of experience in front-end development and design. ' +
     'I blend strong analytical thinking with a sharp eye for design and usability — shipping seamless, ' +
-    'performant user experiences for healthcare, fintech, and enterprise applications.',
+    'performant user experiences for healthcare, fintech, and enterprise applications. Currently architecting ' +
+    'Smart EMR, a next-generation Electronic Medical Records platform built from the ground up.',
 
   highlights: [
-    { value: '3.4+', label: 'Years of experience' },
-    { value: '15+',  label: 'Modules shipped'     },
-    { value: '2',    label: 'Enterprise products' },
+    { value: '4.8+', label: 'Years of experience' },
+    { value: '20+',  label: 'Modules shipped'     },
+    { value: '3',    label: 'Enterprise products' },
     { value: '∞',    label: 'Cups of coffee'      },
   ],
 
@@ -93,6 +95,24 @@ export const RESUME = {
   ],
 
   projects: [
+    {
+      title: 'Smart EMR — Electronic Medical Records',
+      tag: 'EMR · Healthcare · Architecting',
+      featured: true,
+      summary:
+        'A next-generation Electronic Medical Records platform I initiated and am architecting for hospitals — ' +
+        'reimagining how clinicians capture, retrieve, and act on patient records. Built clinician-first with ' +
+        'speed, accessibility, and offline resilience baked into the foundation.',
+      contributions: [
+        'Initiated the project and led the architecture from a blank slate',
+        'Designed a clinician-first UX optimized for fast record entry',
+        'Built a modular Angular 21 standalone-components foundation',
+        'Established the design system and reusable component library',
+        'Defined offline-resilient data flow patterns for clinical use',
+      ],
+      stack: ['Angular 21', 'TypeScript', 'RxJS', 'Signals', 'SCSS', 'REST'],
+      accent: 'pink',
+    },
     {
       title: 'Hospital Management & Information System',
       tag: 'HMIS · Healthcare',

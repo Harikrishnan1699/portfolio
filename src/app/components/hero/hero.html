@@ -19,7 +19,7 @@
       <h1 class="hero__title reveal" appReveal style="--i: 1">
         Hi, I'm <span class="gradient-text">{{ resume.name }}</span>.
         <br />
-        I build delightful Angular apps.
+        I craft delightful Angular apps.
       </h1>
 
       <p class="hero__lead reveal" appReveal style="--i: 2">
@@ -69,25 +69,39 @@
       </div>
     </div>
 
-    <!-- Floating glass orb / code mockup -->
+    <!-- Photo with glass frame + floating cards -->
     <div class="hero__visual reveal reveal-scale" appReveal>
-      <div class="orb glass glass-strong">
-        <div class="orb__head">
-          <span class="orb__dot orb__dot--r"></span>
-          <span class="orb__dot orb__dot--y"></span>
-          <span class="orb__dot orb__dot--g"></span>
-          <span class="orb__file mono">harikrishnan.ts</span>
-        </div>
-        <pre class="orb__code mono"><span class="kw">const</span> <span class="var">developer</span> = &#123;
-  <span class="prop">name</span>: <span class="str">'Harikrishnan PV'</span>,
-  <span class="prop">role</span>: <span class="str">'Software Engineer'</span>,
-  <span class="prop">stack</span>: [<span class="str">'Angular'</span>, <span class="str">'TypeScript'</span>, <span class="str">'RxJS'</span>],
-  <span class="prop">focus</span>: <span class="str">'crafting fast, accessible UIs'</span>,
-  <span class="prop">currentlyBuilding</span>: <span class="str">'enterprise HMIS'</span>,
-  <span class="prop">openTo</span>: <span class="str">'new challenges'</span>,
-&#125;;
 
-<span class="kw">export default</span> developer;</pre>
+      <div class="photo-frame">
+        <div class="photo-frame__glow"></div>
+        <div class="photo-frame__inner">
+          @if (photoLoaded()) {
+            <img
+              [src]="resume.photoUrl"
+              [alt]="resume.name"
+              class="photo-frame__img"
+              (error)="onPhotoError()"
+              loading="eager"
+            />
+          } @else {
+            <div class="photo-frame__fallback">
+              <span class="photo-frame__initials">HP</span>
+            </div>
+          }
+          <div class="photo-frame__shine"></div>
+        </div>
+
+        <span class="photo-frame__chip photo-frame__chip--top mono">
+          <span class="dot"></span>
+          Open to work
+        </span>
+
+        <span class="photo-frame__chip photo-frame__chip--bottom mono">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+          {{ resume.yearsOfExperience }}+ yrs
+        </span>
       </div>
 
       <div class="float-card float-card--top glass">

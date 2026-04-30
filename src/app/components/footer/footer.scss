@@ -2,18 +2,18 @@
 
 .footer {
   position: relative;
-  padding: 80px 0 28px;
+  padding: 90px 0 32px;
   border-top: 1px solid var(--border);
   margin-top: 60px;
   background:
-    radial-gradient(800px 400px at 50% 0%, rgba(124, 92, 255, 0.12), transparent 70%);
+    radial-gradient(900px 400px at 50% 0%, rgba(167, 139, 250, 0.12), transparent 70%);
 }
 
 .footer__inner {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr auto;
-  gap: 56px;
-  padding-bottom: 50px;
+  gap: 60px;
+  padding-bottom: 56px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -22,33 +22,35 @@
   align-items: center;
   gap: 10px;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 16px;
 
   .brand__dot {
-    width: 8px; height: 8px;
+    width: 9px; height: 9px;
     border-radius: 999px;
-    background: var(--accent-2);
-    box-shadow: 0 0 12px var(--accent-2);
+    background: var(--cyan);
+    box-shadow: 0 0 12px var(--cyan);
   }
 }
 
 .footer__tag {
   color: var(--text-muted);
-  font-size: 0.92rem;
-  max-width: 380px;
+  font-size: 0.94rem;
+  max-width: 400px;
   margin: 0;
+  line-height: 1.6;
 }
 
 .footer__links {
   h4 {
     font-family: var(--font-mono);
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--text-dim);
-    margin: 0 0 16px;
+    color: var(--cyan);
+    margin: 0 0 18px;
+    font-weight: 600;
   }
   ul {
     list-style: none; margin: 0; padding: 0;
@@ -56,12 +58,13 @@
   }
   a {
     color: var(--text-muted);
-    font-size: 0.92rem;
+    font-size: 0.94rem;
+    font-weight: 500;
     transition: color 0.25s, transform 0.25s;
     display: inline-block;
 
     &:hover {
-      color: var(--accent-2);
+      color: var(--violet);
       transform: translateX(3px);
     }
   }
@@ -69,7 +72,7 @@
 
 .footer__top { align-self: end; }
 .footer__top-btn {
-  padding: 11px 18px;
+  padding: 12px 20px;
   font-size: 0.85rem;
 }
 
@@ -77,9 +80,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 24px;
-  font-size: 0.82rem;
+  padding-top: 26px;
+  font-size: 0.84rem;
   color: var(--text-dim);
+  font-weight: 500;
 }
 
 @media (max-width: 880px) {

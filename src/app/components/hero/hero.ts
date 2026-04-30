@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RESUME } from '../../data/resume.data';
 import { RevealDirective } from '../../shared/reveal.directive';
 import { ParallaxDirective } from '../../shared/parallax.directive';
@@ -14,9 +14,14 @@ import { scrollToId } from '../../shared/smooth-scroll';
 })
 export class HeroComponent {
   protected readonly resume = RESUME;
+  protected readonly photoLoaded = signal(true);
 
   protected go(id: string, event: Event): void {
     event.preventDefault();
     scrollToId(id);
+  }
+
+  protected onPhotoError(): void {
+    this.photoLoaded.set(false);
   }
 }

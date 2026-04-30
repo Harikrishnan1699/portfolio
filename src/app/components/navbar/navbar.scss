@@ -5,15 +5,20 @@
   top: 0; left: 0; right: 0;
   z-index: 50;
   padding: 18px 0;
-  transition: padding 0.4s var(--ease-out), background 0.4s var(--ease-out), border-color 0.4s var(--ease-out), backdrop-filter 0.4s var(--ease-out);
+  transition: padding 0.4s var(--ease-out),
+              background 0.4s var(--ease-out),
+              border-color 0.4s var(--ease-out),
+              backdrop-filter 0.4s var(--ease-out),
+              box-shadow 0.4s var(--ease-out);
   border-bottom: 1px solid transparent;
 
   &.is-scrolled {
     padding: 10px 0;
-    background: rgba(7, 7, 26, 0.55);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    background: rgba(5, 5, 20, 0.55);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
     border-bottom-color: var(--border);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
 
   &__inner {
@@ -30,28 +35,29 @@
   align-items: center;
   gap: 12px;
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 
   &__mark {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 12px;
+    padding: 7px 12px;
     border-radius: 12px;
-    background: var(--surface-strong);
+    background: var(--paper-strong);
     border: 1px solid var(--border-strong);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     font-family: var(--font-mono);
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     color: var(--text);
-    backdrop-filter: blur(12px);
   }
   &__dot {
     width: 8px; height: 8px;
     border-radius: 999px;
-    background: var(--accent-2);
-    box-shadow: 0 0 12px var(--accent-2);
+    background: var(--cyan);
+    box-shadow: 0 0 12px var(--cyan);
     animation: pulse 2.4s ease-in-out infinite;
   }
   &__name {
@@ -72,9 +78,10 @@
   gap: 4px;
   padding: 6px;
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--paper);
   border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .nav__link {
@@ -91,7 +98,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: var(--surface-strong);
+    background: var(--paper-strong);
     opacity: 0;
     transform: scale(0.85);
     transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-spring);
@@ -100,13 +107,11 @@
   &:hover { color: var(--text); }
   &:hover::before { opacity: 1; transform: scale(1); }
 
-  &.is-active {
-    color: var(--text);
-  }
+  &.is-active { color: #fff; }
   &.is-active::before {
     opacity: 1;
     transform: scale(1);
-    background: linear-gradient(135deg, rgba(124, 92, 255, 0.30), rgba(34, 211, 238, 0.18));
+    background: var(--grad-violet);
     box-shadow: 0 4px 20px -6px var(--accent-glow);
   }
 
@@ -117,7 +122,7 @@
 .nav__actions { display: flex; align-items: center; gap: 12px; }
 
 .nav__cta {
-  padding: 11px 20px;
+  padding: 11px 22px;
   font-size: 0.9rem;
 }
 
@@ -127,8 +132,10 @@
   gap: 5px;
   padding: 10px;
   border-radius: 12px;
-  background: var(--surface);
+  background: var(--paper-strong);
   border: 1px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   span {
     display: block;
@@ -154,9 +161,12 @@
     align-items: stretch;
     padding: 10px;
     gap: 4px;
-    background: rgba(13, 11, 34, 0.85);
-    backdrop-filter: blur(20px);
+    background: rgba(10, 10, 35, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border-strong);
     border-radius: 20px;
+    box-shadow: var(--shadow-lg);
 
     opacity: 0;
     transform: translateY(-12px);
